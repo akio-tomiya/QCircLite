@@ -50,14 +50,29 @@ Circuit(2).x[1].run()   # 1|01⟩
 
 回転ゲートは $R_x(\theta)=e^{-i\theta X/2}$ などの定義です。
 
-## Google Colab での取り寄せ方
+## Google Colab での使い方
 
-配布用のURLは未定です（YITP に版番号付きのファイル名で置く予定）。
+版を固定して入れる（授業ではこちらを使う）：
 
 ```python
-!curl -O <配布URL>/qcirclite.py
+!pip -q install git+https://github.com/akio-tomiya/QCircLite@v0.1.0
 from qcirclite import Circuit
 ```
+
+最新版を入れる：
+
+```python
+!pip -q install git+https://github.com/akio-tomiya/QCircLite@main
+```
+
+ファイル1つだけを取り寄せてもよい：
+
+```python
+!curl -s -o qcirclite.py https://raw.githubusercontent.com/akio-tomiya/QCircLite/v0.1.0/src/qcirclite.py
+```
+
+どの版を使っているかは `import qcirclite; print(qcirclite.__version__)` で確かめられます。
+一度 `import` した後で別の版を入れ直したときは、ランタイムを再起動してください。
 
 ## 開発
 
@@ -73,4 +88,4 @@ pytest
 
 ## ライセンス
 
-未定。
+MIT License（`LICENSE` を参照）。

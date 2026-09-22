@@ -8,6 +8,8 @@ dynamic = ["version"]
 description = "講義用の小さな量子回路シミュレータ（QCircLite）"
 readme = "README.md"
 requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Akio Tomiya" }]
 dependencies = ["numpy>=1.21"]
 
 [project.optional-dependencies]
