@@ -23,7 +23,7 @@ from collections import Counter
 
 import numpy as np
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __all__ = ["Circuit", "State", "Counts", "plot_counts", "__version__"]
 
 _EPS = 1e-12
@@ -344,7 +344,8 @@ class State:
             width = len(keep)
         else:
             width = self.n_qubits
-        return {format(i, f"0{width}b"): float(p) for i, p in enumerate(probs) if p > 1e-12}
+        # 0.4999999999999999 のような丸め誤差を表示しないよう、12桁で丸める
+        return {format(i, f"0{width}b"): round(float(p), 12) for i, p in enumerate(probs) if p > 1e-12}
 
     def sample(self, shots, qubits=None, seed=None):
         """測定を shots 回くり返したときの結果の回数（Counter）を返す。"""

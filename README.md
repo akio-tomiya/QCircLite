@@ -55,7 +55,7 @@ Circuit(2).x[1].run()   # 1|01⟩
 版を固定して入れる（授業ではこちらを使う）：
 
 ```python
-!pip -q install git+https://github.com/akio-tomiya/QCircLite@v0.1.0
+!pip -q install git+https://github.com/akio-tomiya/QCircLite@v0.1.1
 from qcirclite import Circuit
 ```
 
@@ -68,7 +68,7 @@ from qcirclite import Circuit
 ファイル1つだけを取り寄せてもよい：
 
 ```python
-!curl -s -o qcirclite.py https://raw.githubusercontent.com/akio-tomiya/QCircLite/v0.1.0/src/qcirclite.py
+!curl -s -o qcirclite.py https://raw.githubusercontent.com/akio-tomiya/QCircLite/v0.1.1/src/qcirclite.py
 ```
 
 どの版を使っているかは `import qcirclite; print(qcirclite.__version__)` で確かめられます。

@@ -178,3 +178,7 @@ def test_state_accepts_bitstring_index():
     s = Circuit().h[0].cx[0, 1].run()
     assert isinstance(s, State)
     assert s["11"] == pytest.approx(S2)
+
+
+def test_probabilities_are_rounded_for_display():
+    assert Circuit(1).h[0].run().probabilities() == {"0": 0.5, "1": 0.5}
