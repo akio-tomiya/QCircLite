@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qcirclite"
+dynamic = ["version"]
+description = "講義用の小さな量子回路シミュレータ（QCircLite）"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.21"]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.5"]
+dev = ["pytest>=7", "matplotlib>=3.5"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = ["qcirclite"]
+
+[tool.setuptools.dynamic]
+version = {attr = "qcirclite.__version__"}
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
